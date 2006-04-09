@@ -17,7 +17,7 @@ class ClientTests < Test::Unit::TestCase
     client = SRU::Client.new 'http://z3950.loc.gov:7090/voyager'
     results = client.search_retrieve 'twain', :maximumRecords => 5
     assert_equal 5, results.entries.size
-    assert_equal 5, results.number_of_records
+    assert results.number_of_records > 2000
     assert_equal REXML::Element, results.entries[0].class
     assert_equal 'record', results.entries[0].name
 
