@@ -15,7 +15,7 @@ module SRU
     def number_of_records
       return Integer(xpath('.//zs:numberOfRecords'))
     end
-  
+
     # Returns the contents of each recordData element in a 
     # SRU searchRetrieve response.
    

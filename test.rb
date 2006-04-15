@@ -21,8 +21,19 @@ class ClientTests < Test::Unit::TestCase
     assert_equal REXML::Element, results.entries[0].class
     assert_equal 'record', results.entries[0].name
 
+    # hopefully there isn't a document that matches this :)
     results = client.search_retrieve 'fidkidkdiejfl'
     assert_equal 0, results.entries.size
+  end
+
+  def test_scan
+    # this scan response appears to be canned
+    client = SRU::Client.new 'http://tweed.lib.ed.ac.uk:8080/elf/search/copac'
+    scan = client.scan('foobar')
+    assert scan.entries.size > 0
+    assert_equal SRU::Term, scan.entries[0].class
+    assert_equal 'low', scan.entries[0].value
+    assert_equal '1', scan.entries[0].number_of_records
   end
 
 end

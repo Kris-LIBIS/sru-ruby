@@ -2,7 +2,6 @@ require 'uri'
 require 'cgi'
 require 'net/http'
 require 'rexml/document'
-require 'sru/explain'
 
 module SRU
 
@@ -52,27 +51,40 @@ module SRU
     end
 
 
-    def scan
+    # Send a scan request to the SRU server and return a SRU::ScanResponse
+    # object. You must supply the first parameter which is the searchClause.
+    # Other SRU options can be sent in a hash as the seond argument.
+    #
+    #   scan_response = client.scan 'title
+   
+    def scan(clause, options={})
+      options['scanClause'] = clause
+      options['operation'] = 'scan'
+      doc = get_doc(options)
+      return ScanResponse.new(doc)
     end
 
     private
-    
+
+    # helper to fetch xml responses from the sru server
+    # given a set of options
+   
     def get_doc(hash)
       # all requests get a version
-      hash['version'] = @version
+      hash['version'] = @version 
 
       # don't want to monkey with the original
       uri = @server.clone
 
       # no ruby class for building a query string!?!?
-      parts = hash.entries.map { |e| 
-        name, value = e[0], String(e[1])
-        "#{name}=#{CGI.escape(value)}"
+      # probably just wasn't looking in the right place
+      parts = hash.entries.map { |entry| 
+        "#{entry[0]}=#{CGI.escape(entry[1].to_s)}"
       }
-
       uri.query = parts.join('&')
-      xml = Net::HTTP.get(uri)
 
+      # fetch the xml and build/return a document object from it
+      xml = Net::HTTP.get(uri)
       return REXML::Document.new(xml)
     end
   end
