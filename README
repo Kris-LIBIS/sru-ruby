@@ -26,16 +26,12 @@ USAGE
   # issue a search and get back a SRU::SearchRetrieveResponse object 
   # which serves as an iterator 
   records = client.search_retrieve 'rosetta stone', {:maximumRecords => 5}
-  for record in records
-    puts records
-  end
+  records.each {|record| puts record}
 
-  # issue a scan request
-  for term in client.scan('king tut') 
-    puts term
-  end
+  # issue a scan request and print out each term
+  client.scan('king tut', {:maximumTerms => 12}).each {|term| puts term}
 
-INSTALLTION
+INSTALLATION
 
 You should be able to install the gem:
 
@@ -45,7 +41,6 @@ The source lives in subversion:
 
   http://www.textualize.com/svn/sru-ruby
 
-CONTACT:
+CONTACT
 
 Bugs and suggestions to Ed Summers <ehs@pobox.com>
-
