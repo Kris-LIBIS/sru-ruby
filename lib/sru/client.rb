@@ -84,8 +84,12 @@ module SRU
       uri.query = parts.join('&')
 
       # fetch the xml and build/return a document object from it
-      xml = Net::HTTP.get(uri)
-      return REXML::Document.new(xml)
+      begin
+        xml = Net::HTTP.get(uri)
+        return REXML::Document.new(xml)
+      rescue 
+        raise SRU::Exception, "exception during SRU operation", caller
+      end
     end
   end
 end
