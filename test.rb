@@ -11,6 +11,11 @@ class ClientTests < Test::Unit::TestCase
     explain = client.explain
     assert_equal SRU::ExplainResponse, explain.class
     assert_equal '1.1', explain.version
+    assert_equal 'z3950.loc.gov', explain.host
+    assert_equal 7090, explain.port
+    assert_equal 'voyager', explain.database
+    assert_equal 'host=z3950.loc.gov port=7090 database=voyager version=1.1',
+      explain.to_s
   end
 
   def test_search_retrieve
