@@ -1,3 +1,8 @@
+v0.0.3 Fri Apr 21 11:17:37 EST 2006
+- added default maximumRecords and maximumTerms so that requests don't
+  unexpectedly return nil when there are hits (thanks Bruce D'Arcus)
+- minor doc fixes
+
 v0.0.2 Mon Apr 17 21:42:31 CDT 2006
 - filled out SRU::Explain a bit more
 

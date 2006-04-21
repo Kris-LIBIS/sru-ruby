@@ -31,6 +31,12 @@ class ClientTests < Test::Unit::TestCase
     assert_equal 0, results.entries.size
   end
 
+  def test_default_maximum_records
+    client = SRU::Client.new 'http://z3950.loc.gov:7090/voyager'
+    results = client.search_retrieve 'twain'
+    assert_equal 10, results.entries.size
+  end
+
   def test_scan
     # this scan response appears to be canned might need to change
     client = SRU::Client.new 'http://tweed.lib.ed.ac.uk:8080/elf/search/copac'
