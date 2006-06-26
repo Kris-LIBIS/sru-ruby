@@ -37,7 +37,7 @@ class ClientTests < Test::Unit::TestCase
     assert_equal 10, results.entries.size
   end
 
-  # need to find a target that supports scan
+  # need to find a target that supports scan so we can exercise it
   #def test_scan
   #  # this scan response appears to be canned might need to change
   #  client = SRU::Client.new 'http://tweed.lib.ed.ac.uk:8080/elf/search/copac'
