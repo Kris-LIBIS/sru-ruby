@@ -18,11 +18,11 @@ module SRU
   #
   #  # issue a search and get back a SRU::SearchRetrieveResponse object 
   #  # which serves as an iterator 
-  #  records = client.search_retrieve 'rosetta stone', {:maximumRecords => 5}
+  #  records = client.search_retrieve 'rosetta stone', :maximumRecords => 5
   #  records.each {|record| puts record}
   #
   #  # issue a scan request and print out each term
-  #  client.scan('king tut', {:maximumTerms => 12}).each {|term| puts term}
+  #  client.scan('king tut', :maximumTerms => 12).each {|term| puts term}
   
   class Client
 
@@ -56,7 +56,7 @@ module SRU
     # as an optional second argument. 
     # 
     #   client = SRU::Client.new 'http://example.com/sru'
-    #   response = client.search_retrieve('mark twain', maximumRecords => 1)
+    #   response = client.search_retrieve 'mark twain', maximumRecords => 1
     
     def search_retrieve(query, options={})
       options[:query] = query
