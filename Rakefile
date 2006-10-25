@@ -1,4 +1,4 @@
-RUBY_OAI_VERSION = '0.0.3'
+RUBY_SRU_VERSION = '0.0.3'
 
 require 'rubygems'
 require 'rake'
@@ -16,23 +16,24 @@ Rake::TestTask.new('test') do |t|
   t.ruby_opts = ['-r sru', '-r test/unit']
 end
 
-spec = Gem::Specification.new do |s|
-    s.name = 'sru'
-    s.version = '0.0.3'
-    s.author = 'Ed Summers'
-    s.email = 'ehs@pobox.com'
-    s.homepage = 'http://www.textualize.com/sruby'
-    s.platform = Gem::Platform::RUBY
-    s.summary = 'a Ruby library for Search and Retrieve by URL'
-    s.files = Dir.glob("{lib,test}/**/*")
-    s.require_path = 'lib'
-    s.autorequire = 'sru'
-    s.has_rdoc = true
+Rake::RDocTask.new('doc') do |rd|
+  rd.rdoc_files.include("lib/**/*.rb")
+  rd.options << "--all"
+  rd.rdoc_dir = 'doc'
 end
 
-if $0 == __FILE__
-    Gem::manage_gems
-    Gem::Builder.new(spec).build
+spec = Gem::Specification.new do |s|
+  s.name = 'sru'
+  s.version = RUBY_SRU_VERSION
+  s.author = 'Ed Summers'
+  s.email = 'ehs@pobox.com'
+  s.homepage = 'http://www.textualize.com/sruby'
+  s.platform = Gem::Platform::RUBY
+  s.summary = 'a Ruby library for Search and Retrieve by URL'
+  s.files = Dir.glob("{lib,test}/**/*")
+  s.require_path = 'lib'
+  s.autorequire = 'sru'
+  s.has_rdoc = true
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
