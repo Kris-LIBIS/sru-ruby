@@ -1,9 +1,3 @@
-#!/usr/bin/env ruby
-
-$LOAD_PATH.unshift '/Users/edsu/cruise/checkout/sruby/lib'
-require 'test/unit'
-require 'sru'
-
 class ClientTests < Test::Unit::TestCase
 
   def test_explain
