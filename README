@@ -37,9 +37,9 @@ You should be able to install the gem:
 
   gem install sru
 
-The source lives in subversion:
+For more information check out the rubyforge website.
 
-  http://www.textualize.com/svn/sru-ruby
+  http://rubyforge.org/projects/sru
 
 CONTACT
 
