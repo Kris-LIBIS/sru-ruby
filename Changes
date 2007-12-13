@@ -1,3 +1,7 @@
+v0.0.4 Thu Dec 13 03:53:30 EST 2007
+- normalized attributes in Term
+- a bit more documentation
+
 v0.0.3 Fri Apr 21 11:17:37 EST 2006
 - added default maximumRecords and maximumTerms so that requests don't
   unexpectedly return nil when there are hits (thanks Bruce D'Arcus)
