@@ -1,7 +1,6 @@
-sru
----
+= sru
 
-DESCRIPTION
+== DESCRIPTION
 
 sru is a Ruby library for talking to servers that support the Search & Retrieve
 by URL (SRU) protocol. SRU is essentially a lightweight api for performing
@@ -13,7 +12,7 @@ addition SRU clients can perform an 'explain' operation which asks the SRU
 server to describe itself, and its capabilities. The final operation is 'scan'
 which allows a client to walk an index of terms used in the target.
 
-USAGE
+== USAGE
 
   require 'sru'
 
@@ -31,17 +30,21 @@ USAGE
   # issue a scan request and print out each term
   client.scan('king tut', {:maximumTerms => 12}).each {|term| puts term}
 
-INSTALLATION
+== INSTALLATION
 
 You should be able to install the gem:
 
   gem install sru
 
-For more information check out the rubyforge website.
+For information on how to access the code in subversion:
+
+  http://rubyforge.org/scm/?group_id=1574
+
+More information about the project:
 
   http://rubyforge.org/projects/sru
 
-AUTHORS
+== AUTHORS
 
   Ross Singer <rossfsinger@gmail.com>
   Ed Summers <ehs@pobox.com>

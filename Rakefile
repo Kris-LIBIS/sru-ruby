@@ -17,8 +17,9 @@ Rake::TestTask.new('test') do |t|
 end
 
 Rake::RDocTask.new('doc') do |rd|
-  rd.rdoc_files.include("lib/**/*.rb")
-  rd.options << "--all"
+  rd.rdoc_files.include('lib/**/*.rb', 'README')
+  rd.main = 'README'
+  rd.options << "--inline-source"
   rd.rdoc_dir = 'doc'
 end
 
