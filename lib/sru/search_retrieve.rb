@@ -4,10 +4,12 @@ module SRU
   
   # An iterator for search results which allows you to do stuff like:
   #
-  # client = SRU::Client.new 'http://sru.example.com'
-  # for record in client.search_retrieve('Mark Twain')
-  #   puts record 
-  # end
+  #   client = SRU::Client.new 'http://sru.example.com'
+  #   for record in client.search_retrieve('Mark Twain')
+  #     puts record 
+  #   end
+  # 
+  # The records returned are REXML::Document objects.
   
   class SearchResponse < Response
     include Enumerable
