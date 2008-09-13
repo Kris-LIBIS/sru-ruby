@@ -7,7 +7,7 @@ module SRU
     include Enumerable
 
     def each
-      for term_node in xpath_all('.//zs:term')
+      for term_node in xpath_all(@doc, './/zs:term', @namespaces)
         yield Term.new(term_node) 
       end
     end

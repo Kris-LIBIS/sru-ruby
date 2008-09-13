@@ -15,16 +15,17 @@ module SRU
     include Enumerable
 
     def number_of_records
-      return Integer(xpath('.//zs:numberOfRecords'))
+      return Integer(xpath(@doc, './/zs:numberOfRecords', @namespaces))
     end
 
     # Returns the contents of each recordData element in a 
     # SRU searchRetrieve response.
    
     def each
-      for record_data in xpath_all('.//zs:recordData')
-        if record_data.elements.size > 0
-          yield record_data.elements[1]
+      obj = xpath_all(@doc, './/zs:recordData', @namespaces)
+      for record_data in obj
+        if obj.size > 0
+          yield record_data
         end
       end
     end

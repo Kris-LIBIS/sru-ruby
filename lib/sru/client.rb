@@ -1,7 +1,6 @@
 require 'uri'
 require 'cgi'
 require 'net/http'
-require 'rexml/document'
 
 module SRU
 
@@ -30,9 +29,24 @@ module SRU
     # explain request to determine the version to be used in 
     # subsequent requests.
     
-    def initialize(base)
+    def initialize(base,options={})
       @server = URI.parse base
-
+      @parser = options.fetch(:parser, 'rexml')
+      case @parser
+         when 'libxml'
+	    begin
+               require 'rubygems'
+               require 'xml/libxml'
+ 	    rescue
+              raise SRU::Exception, "unknown parser: #{@parser}", caller 
+	    end
+         when 'rexml'
+	     require 'rexml/document'
+             require 'rexml/xpath'
+         else
+              raise SRU::Exception, "unknown parser: #{@parser}", caller
+         end
+        
       # stash this away for future requests
       @version = self.explain.version
     end
@@ -46,7 +60,7 @@ module SRU
     
     def explain
       doc = get_doc(:operation => 'explain')
-      return ExplainResponse.new(doc)
+      return ExplainResponse.new(doc, @parser)
     end
 
 
@@ -62,8 +76,9 @@ module SRU
       options[:query] = query
       options[:operation] = 'searchRetrieve'
       options[:maximumRecords] = 10 unless options.has_key? :maximumRecords
+      options[:recordSchema] = 'dc' unless options.has_key? :recordSchema
       doc = get_doc(options)
-      return SearchResponse.new(doc)
+      return SearchResponse.new(doc, @parser)
     end
 
 
@@ -78,7 +93,7 @@ module SRU
       options[:operation] = 'scan'
       options[:maximumTerms] = 5 unless options.has_key? :maximumTerms
       doc = get_doc(options)
-      return ScanResponse.new(doc)
+      return ScanResponse.new(doc, @parser)
     end
 
     private
@@ -89,6 +104,7 @@ module SRU
     def get_doc(hash)
       # all requests get a version
       hash[:version] = @version 
+      
 
       # don't want to monkey with the original
       uri = @server.clone
@@ -99,12 +115,22 @@ module SRU
         "#{entry[0]}=#{CGI.escape(entry[1].to_s)}"
       }
       uri.query = parts.join('&')
-
       # fetch the xml and build/return a document object from it
       begin
         xml = Net::HTTP.get(uri)
-        return REXML::Document.new(xml)
-      rescue 
+         # load appropriate parser
+        case @parser
+          when 'libxml'
+            xmlObj = LibXML::XML::Parser.new()
+	    # not sure why but the explain namespace does bad things to 
+            # libxml
+            #xml = xml.gsub(' xmlns="http://explain.z3950.org/dtd/2.0/"', '')
+            xmlObj.string = xml
+            return xmlObj.parse
+          when 'rexml'
+            return REXML::Document.new(xml)
+        end
+      rescue
         raise SRU::Exception, "exception during SRU operation", caller
       end
     end

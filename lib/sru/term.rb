@@ -7,11 +7,11 @@ module SRU
 
     def initialize(element)
       super element
-      @value = xpath('value')
-      @number_of_records = xpath('numberOfRecords')
-      @display_term = xpath('displayTerm')
-      @where_in_list = xpath('whereInList')
-      @extra_term_data = xpath_first('extraTermData')
+      @value = xpath(@doc, 'value')
+      @number_of_records = xpath(@doc, 'numberOfRecords')
+      @display_term = xpath(@doc, 'displayTerm')
+      @where_in_list = xpath(@doc, 'whereInList')
+      @extra_term_data = xpath_first(@doc, 'extraTermData')
     end
   end
 end
