@@ -24,7 +24,7 @@ module SRU
   #  client.scan('king tut', :maximumTerms => 12).each {|term| puts term}
   
   class Client
-
+    attr_accessor :version
     # creates a client object which will automatically perform an
     # explain request to determine the version to be used in 
     # subsequent requests.
@@ -36,7 +36,7 @@ module SRU
          when 'libxml'
 	    begin
                require 'rubygems'
-               require 'xml/libxml'
+               require 'libxml'
  	    rescue
               raise SRU::Exception, "unknown parser: #{@parser}", caller 
 	    end
@@ -103,7 +103,7 @@ module SRU
    
     def get_doc(hash)
       # all requests get a version
-      hash[:version] = @version 
+      hash[:version] = @version unless hash[:version]
       
 
       # don't want to monkey with the original
@@ -121,11 +121,11 @@ module SRU
          # load appropriate parser
         case @parser
           when 'libxml'
-            xmlObj = LibXML::XML::Parser.new()
+            xmlObj = LibXML::XML::Parser.string(xml)
 	    # not sure why but the explain namespace does bad things to 
             # libxml
             #xml = xml.gsub(' xmlns="http://explain.z3950.org/dtd/2.0/"', '')
-            xmlObj.string = xml
+            
             return xmlObj.parse
           when 'rexml'
             return REXML::Document.new(xml)
