@@ -117,7 +117,11 @@ module SRU
       uri.query = parts.join('&')
       # fetch the xml and build/return a document object from it
       begin
-        xml = Net::HTTP.get(uri)
+        res = Net::HTTP.start(uri.host, uri.port) {|http|
+          http.get(uri.request_uri, { "Accept" => "text/xml, application/xml"})
+        }
+        
+        xml = res.body
          # load appropriate parser
         case @parser
           when 'libxml'
