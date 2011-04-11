@@ -1,3 +1,12 @@
+v0.0.8 Mon Apr 11 14:55:50 EDT 2011
+- added support for basic authentication (pass credentials in client initialization URL) (thanks Sebastian Hammer)
+- removed some tests that really never could have worked
+
+v0.0.7 ???
+- allow setting version manually if there is no explain document (or it's broken)
+
+v0.0.6 ???
+
 v0.0.5 Wed Sept. 3, 20:05 PST 2008
 - added support for libxml parser
 - added additional namespaces to improve parsing of explain

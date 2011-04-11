@@ -1,4 +1,4 @@
-RUBY_SRU_VERSION = '0.0.7'
+RUBY_SRU_VERSION = '0.0.8'
 
 require 'rubygems'
 require 'rake'

@@ -33,19 +33,19 @@ module SRU
       @server = URI.parse base
       @parser = options.fetch(:parser, 'rexml')
       case @parser
-         when 'libxml'
-	    begin
-               require 'rubygems'
-               require 'libxml'
- 	    rescue
-              raise SRU::Exception, "unknown parser: #{@parser}", caller 
-	    end
-         when 'rexml'
-	     require 'rexml/document'
-             require 'rexml/xpath'
-         else
-              raise SRU::Exception, "unknown parser: #{@parser}", caller
-         end
+      when 'libxml'
+        begin
+          require 'rubygems'
+          require 'libxml'
+	        rescue
+            raise SRU::Exception, "unknown parser: #{@parser}", caller 
+          end
+      when 'rexml'
+        require 'rexml/document'
+        require 'rexml/xpath'
+      else
+        raise SRU::Exception, "unknown parser: #{@parser}", caller
+      end
         
       # stash this away for future requests
       @version = self.explain.version
@@ -118,7 +118,11 @@ module SRU
       # fetch the xml and build/return a document object from it
       begin
         res = Net::HTTP.start(uri.host, uri.port) {|http|
-          http.get(uri.request_uri, { "Accept" => "text/xml, application/xml"})
+          req = Net::HTTP::Get.new(uri.request_uri, { "Accept" => "text/xml, application/xml"})
+          if uri.user && uri.password
+            req.basic_auth uri.user, uri.password
+          end
+          http.request(req)
         }
         
         xml = res.body
@@ -126,10 +130,9 @@ module SRU
         case @parser
           when 'libxml'
             xmlObj = LibXML::XML::Parser.string(xml)
-	    # not sure why but the explain namespace does bad things to 
+	          # not sure why but the explain namespace does bad things to 
             # libxml
-            #xml = xml.gsub(' xmlns="http://explain.z3950.org/dtd/2.0/"', '')
-            
+            #xml = xml.gsub(' xmlns="http://explain.z3950.org/dtd/2.0/"', '')            
             return xmlObj.parse
           when 'rexml'
             return REXML::Document.new(xml)
