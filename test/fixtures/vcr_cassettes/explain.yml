@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://z3950.loc.gov:7090/voyager?operation=explain&version=1.2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - text/xml, application/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '2832'
+      Server:
+      - YAZ/2.1.18
+      Content-Type:
+      - text/xml
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\"?>\n<zs:explainResponse xmlns:zs=\"http://www.loc.gov/zing/srw/\"><zs:version>1.1</zs:version><zs:record><zs:recordSchema>http://explain.z3950.org/dtd/2.0/</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><explain
+        xmlns=\"http://explain.z3950.org/dtd/2.0/\">\n      <serverInfo>\n\t<host>localhost</host>\n\t<port>7090</port>\n\t<database>voyager</database>\n
+        \     </serverInfo>\n      \n      <databaseInfo>\n\t<title>LoC gateway</title>\n\t<description
+        lang=\"en\" primary=\"true\">\n\t  SRW/SRU/Z39.50 Gateway to Library of Congress'
+        Z39.50 server\n\t</description>\n      </databaseInfo>\n      \n      <indexInfo>\n\t<set
+        identifier=\"info:srw/cql-context-set/1/cql-v1.1\" name=\"cql\"/>\n\t<set
+        identifier=\"info:srw/cql-context-set/1/dc-v1.1\" name=\"dc\"/>\n\t<set identifier=\"http://zing.z3950.org/cql/bath/2.0/\"
+        name=\"bath\"/>\n\t\n\t<index id=\"4\">\n\t  <title>title</title>\n\t  <map><name
+        set=\"dc\">title</name></map>\n\t</index>\n\t<index id=\"21\">\n\t  <title>subject</title>\n\t
+        \ <map><name set=\"dc\">subject</name></map>\n\t</index>\n\t<index id=\"1003\">\n\t
+        \ <title>creator</title>\n\t  <map><name set=\"dc\">creator</name></map>\n\t
+        \ <map><name set=\"dc\">author</name></map>\n\t</index>\n\t\n\t<index id=\"1020\">\n\t
+        \ <title>editor</title>\n\t  <map><name set=\"dc\">editor</name></map>\n\t</index>\n\t\n\t<index
+        id=\"1018\">\n\t  <title>publisher</title>\n\t  <map><name set=\"dc\">publisher</name></map>\n\t</index>\n\t\n\t<index
+        id=\"62\">\n\t  <title>description</title>\n\t  <map><name set=\"dc\">description</name></map>\n\t</index>\n\t\n\t<index
+        id=\"30\">\n\t  <title>date</title>\n\t  <map><name set=\"dc\">date</name></map>\n\t</index>\n\t\n\t<index
+        id=\"1002\">\n\t  <title>name</title>\n\t  <map><name set=\"bath\">name</name></map>\n\t</index>\n\t\n\t<index
+        id=\"7\">\n\t  <title>isbn</title>\n\t  <map><name set=\"bath\">isbn</name></map>\n\t</index>\n\t<index
+        id=\"8\">\n\t  <title>issn</title>\n\t  <map><name set=\"bath\">issn</name></map>\n\t</index>\n\t<index
+        id=\"9\">\n\t  <title>lccn</title>\n\t  <map><name set=\"bath\">lccn</name></map>\n\t</index>\n
+        \     </indexInfo>\n\n      <schemaInfo>\n\t<schema identifier=\"info:srw/schema/1/marcxml-v1.1\"
+        sort=\"false\" name=\"marcxml\">\n\t  <title>MARCXML</title>\n\t</schema>\n\t\n\t<schema
+        identifier=\"info:srw/schema/1/dc-v1.1\" sort=\"false\" name=\"dc\">\n\t  <title>Dublin
+        Core</title>\n\t</schema>\n\t\n\t<schema identifier=\"http://www.loc.gov/mods\"
+        sort=\"false\" name=\"mods2\">\n\t  <title>MODS v2</title>\n\t</schema>\n
+        \   \n\t<schema identifier=\"info:srw/schema/1/mods-v3.2\" sort=\"false\"
+        name=\"mods\">\n\t  <title>MODS v3</title>\n\t</schema>\n      </schemaInfo>\n\n
+        \     <configInfo>\n        <default type=\"numberOfRecords\">0</default>\n
+        \     </configInfo>\n      \n    </explain></zs:recordData></zs:record><zs:diagnostics
+        xmlns=\"http://www.loc.gov/zing/srw/diagnostic/\"><diagnostic><uri>info:srw/diagnostic/1/5</uri><message>Unsupported
+        version</message><details>1.1</details></diagnostic></zs:diagnostics></zs:explainResponse>\n"
+    http_version: 
+  recorded_at: Thu, 09 Aug 2012 00:01:47 GMT
+- request:
+    method: get
+    uri: http://z3950.loc.gov:7090/voyager?operation=explain&version=1.1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - text/xml, application/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '2632'
+      Server:
+      - YAZ/2.1.18
+      Content-Type:
+      - text/xml
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\"?>\n<zs:explainResponse xmlns:zs=\"http://www.loc.gov/zing/srw/\"><zs:version>1.1</zs:version><zs:record><zs:recordSchema>http://explain.z3950.org/dtd/2.0/</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><explain
+        xmlns=\"http://explain.z3950.org/dtd/2.0/\">\n      <serverInfo>\n\t<host>localhost</host>\n\t<port>7090</port>\n\t<database>voyager</database>\n
+        \     </serverInfo>\n      \n      <databaseInfo>\n\t<title>LoC gateway</title>\n\t<description
+        lang=\"en\" primary=\"true\">\n\t  SRW/SRU/Z39.50 Gateway to Library of Congress'
+        Z39.50 server\n\t</description>\n      </databaseInfo>\n      \n      <indexInfo>\n\t<set
+        identifier=\"info:srw/cql-context-set/1/cql-v1.1\" name=\"cql\"/>\n\t<set
+        identifier=\"info:srw/cql-context-set/1/dc-v1.1\" name=\"dc\"/>\n\t<set identifier=\"http://zing.z3950.org/cql/bath/2.0/\"
+        name=\"bath\"/>\n\t\n\t<index id=\"4\">\n\t  <title>title</title>\n\t  <map><name
+        set=\"dc\">title</name></map>\n\t</index>\n\t<index id=\"21\">\n\t  <title>subject</title>\n\t
+        \ <map><name set=\"dc\">subject</name></map>\n\t</index>\n\t<index id=\"1003\">\n\t
+        \ <title>creator</title>\n\t  <map><name set=\"dc\">creator</name></map>\n\t
+        \ <map><name set=\"dc\">author</name></map>\n\t</index>\n\t\n\t<index id=\"1020\">\n\t
+        \ <title>editor</title>\n\t  <map><name set=\"dc\">editor</name></map>\n\t</index>\n\t\n\t<index
+        id=\"1018\">\n\t  <title>publisher</title>\n\t  <map><name set=\"dc\">publisher</name></map>\n\t</index>\n\t\n\t<index
+        id=\"62\">\n\t  <title>description</title>\n\t  <map><name set=\"dc\">description</name></map>\n\t</index>\n\t\n\t<index
+        id=\"30\">\n\t  <title>date</title>\n\t  <map><name set=\"dc\">date</name></map>\n\t</index>\n\t\n\t<index
+        id=\"1002\">\n\t  <title>name</title>\n\t  <map><name set=\"bath\">name</name></map>\n\t</index>\n\t\n\t<index
+        id=\"7\">\n\t  <title>isbn</title>\n\t  <map><name set=\"bath\">isbn</name></map>\n\t</index>\n\t<index
+        id=\"8\">\n\t  <title>issn</title>\n\t  <map><name set=\"bath\">issn</name></map>\n\t</index>\n\t<index
+        id=\"9\">\n\t  <title>lccn</title>\n\t  <map><name set=\"bath\">lccn</name></map>\n\t</index>\n
+        \     </indexInfo>\n\n      <schemaInfo>\n\t<schema identifier=\"info:srw/schema/1/marcxml-v1.1\"
+        sort=\"false\" name=\"marcxml\">\n\t  <title>MARCXML</title>\n\t</schema>\n\t\n\t<schema
+        identifier=\"info:srw/schema/1/dc-v1.1\" sort=\"false\" name=\"dc\">\n\t  <title>Dublin
+        Core</title>\n\t</schema>\n\t\n\t<schema identifier=\"http://www.loc.gov/mods\"
+        sort=\"false\" name=\"mods2\">\n\t  <title>MODS v2</title>\n\t</schema>\n
+        \   \n\t<schema identifier=\"info:srw/schema/1/mods-v3.2\" sort=\"false\"
+        name=\"mods\">\n\t  <title>MODS v3</title>\n\t</schema>\n      </schemaInfo>\n\n
+        \     <configInfo>\n        <default type=\"numberOfRecords\">0</default>\n
+        \     </configInfo>\n      \n    </explain></zs:recordData></zs:record></zs:explainResponse>\n"
+    http_version: 
+  recorded_at: Thu, 09 Aug 2012 00:01:48 GMT
+recorded_with: VCR 2.2.4

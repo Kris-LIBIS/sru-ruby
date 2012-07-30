@@ -1,0 +1,212 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.nla.gov.au/apps/srw/search/peopleaustralia?operation=explain&version=1.2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - text/xml, application/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 09 Aug 2012 00:01:42 GMT
+      Content-Type:
+      - text/xml;charset=ISO-8859-1
+      X-Cache:
+      - MISS from proxy6.uq.edu.au
+      X-Cache-Lookup:
+      - MISS from proxy6.uq.edu.au:80
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 proxy6.uq.edu.au:80 (squid/2.7.STABLE9)
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\" ?> \n<?xml-stylesheet type=\"text/xsl\"
+        href=\"../explainResponse.xsl\"?>\n<SRW:explainResponse xmlns:SRW=\"http://www.loc.gov/zing/srw/\">\n
+        \ <SRW:version>1.1</SRW:version>\n  <SRW:record>\n    <SRW:recordSchema>http://explain.z3950.org/dtd/2.0/</SRW:recordSchema>\n
+        \   <SRW:recordPacking>xml</SRW:recordPacking>\n    <SRW:recordData>\n      <explain
+        authoritative=\"true\" xmlns=\"http://explain.z3950.org/dtd/2.0/\">\n        <serverInfo
+        protocol=\"SRW/U\">\n          <host>www.nla.gov.au</host>\n          <port>80</port>\n
+        \         <database>apps/srw/search/peopleaustralia</database>\n          </serverInfo>\n
+        \       <databaseInfo>\n          <title>Trove People and Organisations</title>\n
+        \         <description>Records stored in the Trove People and Organisations
+        repository </description>\n          <author>http://trove.nla.gov.au/people</author>\n
+        \         <contact>Simon Jacob (mailto:sjacob@nla.gov.au)</contact>\n          <implementation
+        version='1.1' indentifier='http://www.oclc.org/research/software/srw'>\n            <title>OCLC
+        Research SRW Server version 1.1</title>\n            </implementation>\n          </databaseInfo>\n
+        \       <metaInfo>\n          </metaInfo>\n        <indexInfo>\n          <set
+        identifier=\"null\" name=\"pa\"/>\n          <index>\n            <title>pa.birthplace</title>\n
+        \           <map>\n              <name set=\"pa\">birthplace</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.deathdecade</title>\n
+        \           <map>\n              <name set=\"pa\">deathdecade</name>\n              </map>\n
+        \           </index>\n          <set identifier=\"null\" name=\"bath\"/>\n
+        \         <index>\n            <title>bath.possessingInstitution</title>\n
+        \           <map>\n              <name set=\"bath\">possessingInstitution</name>\n
+        \             </map>\n            </index>\n          <index>\n            <title>pa.existencedate</title>\n
+        \           <map>\n              <name set=\"pa\">existencedate</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>bath.geographicName</title>\n
+        \           <map>\n              <name set=\"bath\">geographicName</name>\n
+        \             </map>\n            </index>\n          <set identifier=\"null\"
+        name=\"rec\"/>\n          <index>\n            <title>rec.creationDate</title>\n
+        \           <map>\n              <name set=\"rec\">creationDate</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.deathplace</title>\n
+        \           <map>\n              <name set=\"pa\">deathplace</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.firstname</title>\n
+        \           <map>\n              <name set=\"pa\">firstname</name>\n              </map>\n
+        \           </index>\n          <set identifier=\"null\" name=\"dc\"/>\n          <index>\n
+        \           <title>dc.identifier</title>\n            <map>\n              <name
+        set=\"dc\">identifier</name>\n              </map>\n            </index>\n
+        \         <index>\n            <title>pa.relatedresource</title>\n            <map>\n
+        \             <name set=\"pa\">relatedresource</name>\n              </map>\n
+        \           </index>\n          <set identifier=\"null\" name=\"cql\"/>\n
+        \         <index>\n            <title>cql.anywhere</title>\n            <map>\n
+        \             <name set=\"cql\">anywhere</name>\n              </map>\n            </index>\n
+        \         <index>\n            <title>bath.topicalSubject</title>\n            <map>\n
+        \             <name set=\"bath\">topicalSubject</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.relatedresourceimprint</title>\n
+        \           <map>\n              <name set=\"pa\">relatedresourceimprint</name>\n
+        \             </map>\n            </index>\n          <index>\n            <title>pa.biography</title>\n
+        \           <map>\n              <name set=\"pa\">biography</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.relatedresourcetitle</title>\n
+        \           <map>\n              <name set=\"pa\">relatedresourcetitle</name>\n
+        \             </map>\n            </index>\n          <index>\n            <title>pa.gender</title>\n
+        \           <map>\n              <name set=\"pa\">gender</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.birthdecade</title>\n
+        \           <map>\n              <name set=\"pa\">birthdecade</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>rec.modificationDate</title>\n
+        \           <map>\n              <name set=\"rec\">modificationDate</name>\n
+        \             </map>\n            </index>\n          <index>\n            <title>pa.relatedresourcebibseries</title>\n
+        \           <map>\n              <name set=\"pa\">relatedresourcebibseries</name>\n
+        \             </map>\n            </index>\n          <index>\n            <title>bath.personalName</title>\n
+        \           <map>\n              <name set=\"bath\">personalName</name>\n
+        \             </map>\n            </index>\n          <index>\n            <title>rec.identifier</title>\n
+        \           <map>\n              <name set=\"rec\">identifier</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.relatedresourcename</title>\n
+        \           <map>\n              <name set=\"pa\">relatedresourcename</name>\n
+        \             </map>\n            </index>\n          <index>\n            <title>pa.enddate</title>\n
+        \           <map>\n              <name set=\"pa\">enddate</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>dc.contributor</title>\n
+        \           <map>\n              <name set=\"dc\">contributor</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.otherplace</title>\n
+        \           <map>\n              <name set=\"pa\">otherplace</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>bath.corporateName</title>\n
+        \           <map>\n              <name set=\"bath\">corporateName</name>\n
+        \             </map>\n            </index>\n          <set identifier=\"null\"
+        name=\"oai\"/>\n          <index>\n            <title>oai.datestamp</title>\n
+        \           <map>\n              <name set=\"oai\">datestamp</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>bath.name</title>\n
+        \           <map>\n              <name set=\"bath\">name</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>oai.identifier</title>\n
+        \           <map>\n              <name set=\"oai\">identifier</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>dc.description</title>\n
+        \           <map>\n              <name set=\"dc\">description</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.timestamp</title>\n
+        \           <map>\n              <name set=\"pa\">timestamp</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>dc.title</title>\n
+        \           <map>\n              <name set=\"dc\">title</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>dc.subject</title>\n
+        \           <map>\n              <name set=\"dc\">subject</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>cql.resultSetId</title>\n
+        \           <map>\n              <name set=\"cql\">resultSetId</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.heritage</title>\n
+        \           <map>\n              <name set=\"pa\">heritage</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.relatedresourceedition</title>\n
+        \           <map>\n              <name set=\"pa\">relatedresourceedition</name>\n
+        \             </map>\n            </index>\n          <index>\n            <title>pa.surname</title>\n
+        \           <map>\n              <name set=\"pa\">surname</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.relatedname</title>\n
+        \           <map>\n              <name set=\"pa\">relatedname</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.type</title>\n
+        \           <map>\n              <name set=\"pa\">type</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.id</title>\n
+        \           <map>\n              <name set=\"pa\">id</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.startdate</title>\n
+        \           <map>\n              <name set=\"pa\">startdate</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>cql.serverChoice</title>\n
+        \           <map>\n              <name set=\"cql\">serverChoice</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>dc.creator</title>\n
+        \           <map>\n              <name set=\"dc\">creator</name>\n              </map>\n
+        \           </index>\n          <index>\n            <title>pa.relatedresourcedescnote</title>\n
+        \           <map>\n              <name set=\"pa\">relatedresourcedescnote</name>\n
+        \             </map>\n            </index>\n          <index>\n            <title>oai.set</title>\n
+        \           <map>\n              <name set=\"oai\">set</name>\n              </map>\n
+        \           </index>\n          </indexInfo>\n        <schemaInfo>\n          <schema
+        sort=\"false\" retrieve=\"true\" name=\"dc\"\n              identifier=\"info:srw/schema/1/dc-v1.1\"\n
+        \             location=\"http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n
+        \           <title>dc: Dublin Core Elements</title>\n            </schema>\n
+        \         <schema sort=\"false\" retrieve=\"true\" name=\"four\"\n              identifier=\"http://jefferson.village.virginia.edu/eac\"\n
+        \             location=\"http://jefferson.village.virginia.edu/eac/shared/eac/eac.xsd\">\n
+        \           <title>Encoded Archival Context 2004</title>\n            </schema>\n
+        \         <schema sort=\"false\" retrieve=\"true\" name=\"eac\"\n              identifier=\"urn:isbn:1-931666-33-4\"\n
+        \             location=\"http://eac.staatsbibliothek-berlin.de/schema/cpf.xsd\">\n
+        \           <title>Encoded Archival Context -Corporate Bodies, Persons, And
+        Families</title>\n            </schema>\n          <schema sort=\"false\"
+        retrieve=\"true\" name=\"rif\"\n              identifier=\"http://ands.org.au/standards/rif-cs/registryObjects\"\n
+        \             location=\"http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd\">\n
+        \           <title>ANDS Registry Interchange Format - Collections and Services
+        - Party</title>\n            </schema>\n          <schema sort=\"false\" retrieve=\"true\"
+        name=\"atom\"\n              identifier=\"http://www.w3.org/2005/Atom\"\n
+        \             location=\"http://www.kbcafe.com/rss/atom.xsd.xml\">\n            <title>Atom
+        Publishing Protocol</title>\n            </schema>\n          </schemaInfo>\n
+        \       <configInfo>\n          <default type=\"maximumRecords\">100</default>\n
+        \         <default type=\"numberOfRecords\">10</default>\n          <default
+        type=\"retrieveSchema\">info:srw/schema/1/dc-v1.1</default>\n          </configInfo>\n
+        \       </explain>\n      </SRW:recordData>\n    </SRW:record>\n  </SRW:explainResponse>\n"
+    http_version: 
+  recorded_at: Thu, 09 Aug 2012 00:01:42 GMT
+- request:
+    method: get
+    uri: http://www.nla.gov.au/apps/srw/search/peopleaustralia?maximumRecords=10&operation=searchRetrieve&query=pa.surname%20any%20twain&recordSchema=dc&version=1.1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - text/xml, application/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 09 Aug 2012 00:01:42 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '865'
+      X-Cache:
+      - MISS from proxy6.uq.edu.au
+      X-Cache-Lookup:
+      - MISS from proxy6.uq.edu.au:80
+      Via:
+      - 1.1 proxy6.uq.edu.au:80 (squid/2.7.STABLE9)
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\" ?> \n<searchRetrieveResponse
+        xmlns=\"http://www.loc.gov/zing/srw/\"><version>1.1</version><numberOfRecords>0</numberOfRecords><echoedSearchRetrieveRequest
+        xmlns:ns1=\"http://www.loc.gov/zing/srw/\"><version>1.1</version><query>pa.surname
+        any twain</query><xQuery><ns2:searchClause xmlns:ns2=\"http://www.loc.gov/zing/cql/xcql/\"><ns2:index>pa.surname</ns2:index><ns2:relation><ns2:value>any</ns2:value></ns2:relation><ns2:term>twain</ns2:term></ns2:searchClause></xQuery><maximumRecords>10</maximumRecords><recordSchema>dc</recordSchema></echoedSearchRetrieveRequest><diagnostics
+        xmlns:ns3=\"http://www.loc.gov/zing/srw/\"><ns4:diagnostic xmlns:ns4=\"http://www.loc.gov/zing/srw/diagnostic/\"><ns4:uri>info:srw/diagnostic/1/66</ns4:uri><ns4:details>dc
+        is not supported.</ns4:details></ns4:diagnostic></diagnostics></searchRetrieveResponse>"
+    http_version: 
+  recorded_at: Thu, 09 Aug 2012 00:01:42 GMT
+recorded_with: VCR 2.2.4
