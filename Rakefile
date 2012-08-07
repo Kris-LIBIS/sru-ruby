@@ -30,7 +30,11 @@ spec = Gem::Specification.new do |s|
   s.email = 'ehs@pobox.com'
   s.homepage = 'http://github.com/edsu/sru-ruby'
   s.platform = Gem::Platform::RUBY
-  s.summary = 'a Ruby library for Search and Retrieve by URL'
+  s.summary = 'a Ruby library for the Search/Retrieve via URL (SRU) protocol'
+  s.description = <<-EOF
+Client for the Search/Retrieve via URL (SRU) protocol.
+http://www.loc.gov/standards/sru/
+EOF
   s.files = Dir.glob("{lib,test}/**/*")
   s.require_path = 'lib'
   s.autorequire = 'sru'
