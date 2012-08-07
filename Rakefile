@@ -1,4 +1,4 @@
-RUBY_SRU_VERSION = '0.0.8'
+RUBY_SRU_VERSION = '0.0.9'
 
 require 'rubygems'
 require 'rake'
@@ -37,7 +37,6 @@ http://www.loc.gov/standards/sru/
 EOF
   s.files = Dir.glob("{lib,test}/**/*")
   s.require_path = 'lib'
-  s.autorequire = 'sru'
   s.has_rdoc = true
   s.add_dependency 'libxml-ruby'
 end
