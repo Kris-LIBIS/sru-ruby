@@ -1,9 +1,13 @@
 sru
 ===
 
-sru is a Ruby library for talking to servers that support the Search & Retrieve
-by URL (SRU) protocol. SRU is essentially a lightweight api for performing
-information retrieval over HTTP. <http://www.loc.gov/standards/sru/>
+sru is a Ruby library for talking to servers that support the [Search & Retrieve
+by URL](http://www.loc.gov/standards/sru) (SRU) protocol. SRU is a lightweight 
+API for performing information retrieval over HTTP. It is lightweight compared
+to its pre-HTTP ancestory [Z39.50](http://en.wikipedia.org/wiki/Z39.50). If 
+you are thinking about implementing SRU on the server side you should probably 
+be looking at the much more simple and widely deployed 
+[OpenSearch](http://opensearch.org).
 
 Typically SRU clients perform a 'searchRetrieve' operation on a 
 repository and get back different flavored XML metadata for the hits. In
