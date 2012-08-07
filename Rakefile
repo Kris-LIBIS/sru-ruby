@@ -28,13 +28,14 @@ spec = Gem::Specification.new do |s|
   s.version = RUBY_SRU_VERSION
   s.author = 'Ed Summers'
   s.email = 'ehs@pobox.com'
-  s.homepage = 'http://www.textualize.com/sruby'
+  s.homepage = 'http://github.com/edsu/sru-ruby'
   s.platform = Gem::Platform::RUBY
   s.summary = 'a Ruby library for Search and Retrieve by URL'
   s.files = Dir.glob("{lib,test}/**/*")
   s.require_path = 'lib'
   s.autorequire = 'sru'
   s.has_rdoc = true
+  s.add_dependency 'libxml-ruby'
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
