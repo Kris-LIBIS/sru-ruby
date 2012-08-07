@@ -24,6 +24,9 @@ module SRU
   #  client.scan('king tut', :maximumTerms => 12).each {|term| puts term}
   
   class Client
+
+    DEFAULT_SRU_VERSION = '1.2'
+
     attr_accessor :version
     # creates a client object which will automatically perform an
     # explain request to determine the version to be used in 
@@ -103,8 +106,13 @@ module SRU
    
     def get_doc(hash)
       # all requests get a version
-      hash[:version] = @version unless hash[:version]
-      
+      if ! hash.has_key? :version
+        if defined? @version
+          hash[:version] = @version # value obtained from Explain operation
+        else
+          hash[:version] = DEFAULT_SRU_VERSION
+        end
+      end
 
       # don't want to monkey with the original
       uri = @server.clone
