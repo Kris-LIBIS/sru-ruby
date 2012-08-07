@@ -43,7 +43,7 @@ module SRU
     # figure out an attribute
     def get_attribute(node, attr_name)
       case node.class.to_s
-      when 'REXML::XML::Element'
+      when 'REXML::Element'
         return node.attribute(attr_name)
       when 'LibXML::XML::Node'
         #There has been a method shift between 0.5 and 0.7
