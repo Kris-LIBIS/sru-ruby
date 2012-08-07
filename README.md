@@ -37,15 +37,15 @@ Installation
 
 You should be able to install the gem:
 
-  gem install sru
+    gem install sru
 
 For information on how to access the code in subversion:
 
-  http://rubyforge.org/scm/?group_id=1574
+    http://rubyforge.org/scm/?group_id=1574
 
 More information about the project:
 
-  http://rubyforge.org/projects/sru
+    http://rubyforge.org/projects/sru
 
 License
 -------
