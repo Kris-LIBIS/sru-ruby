@@ -39,13 +39,9 @@ You should be able to install the gem:
 
     gem install sru
 
-For information on how to access the code in subversion:
-
-    http://rubyforge.org/scm/?group_id=1574
-
 More information about the project:
 
-    http://rubyforge.org/projects/sru
+    http://github.com/edsu/sru-ruby
 
 License
 -------
