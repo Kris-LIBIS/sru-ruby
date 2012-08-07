@@ -1,6 +1,5 @@
-= sru
-
-== DESCRIPTION
+sru
+===
 
 sru is a Ruby library for talking to servers that support the Search & Retrieve
 by URL (SRU) protocol. SRU is essentially a lightweight api for performing
@@ -12,25 +11,29 @@ addition SRU clients can perform an 'explain' operation which asks the SRU
 server to describe itself, and its capabilities. The final operation is 'scan'
 which allows a client to walk an index of terms used in the target.
 
-== USAGE
+Usage
+-----
 
-  require 'sru'
+```ruby
+require 'sru'
 
-  # create the client using a base address for the SRU service
-  client = SRU::Client.new 'http://sru.example.com'
+# create the client using a base address for the SRU service
+client = SRU::Client.new 'http://sru.example.com'
 
-  # fetch a SRU::ExplainResponse object from the server
-  explain = client.explain
+# fetch a SRU::ExplainResponse object from the server
+explain = client.explain
 
-  # issue a search and get back a SRU::SearchRetrieveResponse object 
-  # which serves as an iterator 
-  records = client.search_retrieve 'rosetta stone', {:maximumRecords => 5}
-  records.each {|record| puts record}
+# issue a search and get back a SRU::SearchRetrieveResponse object 
+# which serves as an iterator 
+records = client.search_retrieve 'rosetta stone', {:maximumRecords => 5}
+records.each {|record| puts record}
 
-  # issue a scan request and print out each term
-  client.scan('king tut', {:maximumTerms => 12}).each {|term| puts term}
+# issue a scan request and print out each term
+client.scan('king tut', {:maximumTerms => 12}).each {|term| puts term}
+```
 
-== INSTALLATION
+Installation
+------------
 
 You should be able to install the gem:
 
@@ -44,8 +47,8 @@ More information about the project:
 
   http://rubyforge.org/projects/sru
 
-== AUTHORS
+License
+-------
 
-  Ross Singer <rossfsinger@gmail.com>
-  Ed Summers <ehs@pobox.com>
-  Terry Reese <terry.reese@oregonstate.edu>
+* [cc0](http://creativecommons.org/about/cc0)
+
