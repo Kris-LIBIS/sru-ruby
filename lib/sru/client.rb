@@ -37,9 +37,9 @@ module SRU
         begin
           require 'rubygems'
           require 'libxml'
-	        rescue
-            raise SRU::Exception, "unknown parser: #{@parser}", caller 
-          end
+        rescue
+          raise SRU::Exception, "unknown parser: #{@parser}", caller 
+        end
       when 'rexml'
         require 'rexml/document'
         require 'rexml/xpath'
