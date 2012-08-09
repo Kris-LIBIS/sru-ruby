@@ -145,7 +145,8 @@ module SRU
           when 'rexml'
             return REXML::Document.new(xml)
         end
-      rescue
+      rescue Exception => e
+        print e.backtrace.join("\n")
         raise SRU::Exception, "exception during SRU operation", caller
       end
     end

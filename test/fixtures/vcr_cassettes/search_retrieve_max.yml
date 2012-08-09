@@ -1,0 +1,333 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://z3950.loc.gov:7090/voyager?operation=explain&version=1.2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - text/xml, application/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '2832'
+      Server:
+      - YAZ/2.1.18
+      Content-Type:
+      - text/xml
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\"?>\n<zs:explainResponse xmlns:zs=\"http://www.loc.gov/zing/srw/\"><zs:version>1.1</zs:version><zs:record><zs:recordSchema>http://explain.z3950.org/dtd/2.0/</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><explain
+        xmlns=\"http://explain.z3950.org/dtd/2.0/\">\n      <serverInfo>\n\t<host>localhost</host>\n\t<port>7090</port>\n\t<database>voyager</database>\n
+        \     </serverInfo>\n      \n      <databaseInfo>\n\t<title>LoC gateway</title>\n\t<description
+        lang=\"en\" primary=\"true\">\n\t  SRW/SRU/Z39.50 Gateway to Library of Congress'
+        Z39.50 server\n\t</description>\n      </databaseInfo>\n      \n      <indexInfo>\n\t<set
+        identifier=\"info:srw/cql-context-set/1/cql-v1.1\" name=\"cql\"/>\n\t<set
+        identifier=\"info:srw/cql-context-set/1/dc-v1.1\" name=\"dc\"/>\n\t<set identifier=\"http://zing.z3950.org/cql/bath/2.0/\"
+        name=\"bath\"/>\n\t\n\t<index id=\"4\">\n\t  <title>title</title>\n\t  <map><name
+        set=\"dc\">title</name></map>\n\t</index>\n\t<index id=\"21\">\n\t  <title>subject</title>\n\t
+        \ <map><name set=\"dc\">subject</name></map>\n\t</index>\n\t<index id=\"1003\">\n\t
+        \ <title>creator</title>\n\t  <map><name set=\"dc\">creator</name></map>\n\t
+        \ <map><name set=\"dc\">author</name></map>\n\t</index>\n\t\n\t<index id=\"1020\">\n\t
+        \ <title>editor</title>\n\t  <map><name set=\"dc\">editor</name></map>\n\t</index>\n\t\n\t<index
+        id=\"1018\">\n\t  <title>publisher</title>\n\t  <map><name set=\"dc\">publisher</name></map>\n\t</index>\n\t\n\t<index
+        id=\"62\">\n\t  <title>description</title>\n\t  <map><name set=\"dc\">description</name></map>\n\t</index>\n\t\n\t<index
+        id=\"30\">\n\t  <title>date</title>\n\t  <map><name set=\"dc\">date</name></map>\n\t</index>\n\t\n\t<index
+        id=\"1002\">\n\t  <title>name</title>\n\t  <map><name set=\"bath\">name</name></map>\n\t</index>\n\t\n\t<index
+        id=\"7\">\n\t  <title>isbn</title>\n\t  <map><name set=\"bath\">isbn</name></map>\n\t</index>\n\t<index
+        id=\"8\">\n\t  <title>issn</title>\n\t  <map><name set=\"bath\">issn</name></map>\n\t</index>\n\t<index
+        id=\"9\">\n\t  <title>lccn</title>\n\t  <map><name set=\"bath\">lccn</name></map>\n\t</index>\n
+        \     </indexInfo>\n\n      <schemaInfo>\n\t<schema identifier=\"info:srw/schema/1/marcxml-v1.1\"
+        sort=\"false\" name=\"marcxml\">\n\t  <title>MARCXML</title>\n\t</schema>\n\t\n\t<schema
+        identifier=\"info:srw/schema/1/dc-v1.1\" sort=\"false\" name=\"dc\">\n\t  <title>Dublin
+        Core</title>\n\t</schema>\n\t\n\t<schema identifier=\"http://www.loc.gov/mods\"
+        sort=\"false\" name=\"mods2\">\n\t  <title>MODS v2</title>\n\t</schema>\n
+        \   \n\t<schema identifier=\"info:srw/schema/1/mods-v3.2\" sort=\"false\"
+        name=\"mods\">\n\t  <title>MODS v3</title>\n\t</schema>\n      </schemaInfo>\n\n
+        \     <configInfo>\n        <default type=\"numberOfRecords\">0</default>\n
+        \     </configInfo>\n      \n    </explain></zs:recordData></zs:record><zs:diagnostics
+        xmlns=\"http://www.loc.gov/zing/srw/diagnostic/\"><diagnostic><uri>info:srw/diagnostic/1/5</uri><message>Unsupported
+        version</message><details>1.1</details></diagnostic></zs:diagnostics></zs:explainResponse>\n"
+    http_version: 
+  recorded_at: Thu, 09 Aug 2012 00:01:43 GMT
+- request:
+    method: get
+    uri: http://z3950.loc.gov:7090/voyager?maximumRecords=10&operation=searchRetrieve&query=twain&recordSchema=dc&version=1.1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - text/xml, application/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '21447'
+      Server:
+      - YAZ/2.1.18
+      Content-Type:
+      - text/xml
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\"?>\n<zs:searchRetrieveResponse xmlns:zs=\"http://www.loc.gov/zing/srw/\"><zs:version>1.1</zs:version><zs:numberOfRecords>3411</zs:numberOfRecords><zs:records><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>The
+        100 most influential writers of all time /</title>\n  <creator>Luebering,
+        J. E. edt</creator>\n  <creator>Britannica Educational Publishing.</creator>\n
+        \ <type>text</type>\n  <publisher>New York, NY : Britannica Educational Pub.
+        in association with Rosen Educational Services,</publisher>\n  <date>2010.</date>\n
+        \ <language>eng</language>\n  <description>Includes bibliographical references
+        (p. 332-333) and index.</description>\n  <description>Homer -- Aeschylus --
+        Sophocles -- Aristophanes -- Gaius Valerius Catullus -- Virgil -- Imru' al-Qays
+        -- Du Fu -- al-Mutanabbi&#x304; -- Ferdowsi&#x304; -- Murasaki Shikibu --
+        Ru&#x304;mi&#x304; -- Dante -- Petrarch -- Geoffrey Chaucer -- Lui&#x301;s
+        de Camo&#x303;es -- Michel de Montaigne -- Miguel de Cervantes -- Edmund Spenser
+        -- Lope de Vega -- Christopher Marlowe -- William Shakespeare -- John Donne
+        -- John Milton -- Jean Racine -- Aphra Behn -- Basho&#x304; -- Sor Juana Ine&#x301;s
+        de la Cruz -- Daniel Defoe -- Jonathan Swift -- Voltaire -- Henry Fielding
+        -- Samuel Johnson -- Johann Wolfgang von Goethe -- Robert Burns -- William
+        Wordsworth -- Sir Walter Scott, 1st Baronet -- Samuel Taylor Coleridge --
+        Jane Austen -- George Gordon Byron, 6th Baron Byron -- Percy Bysshe Shelley
+        -- John Keats -- Aleksandr Pushkin -- Victor Hugo -- Nathaniel Hawthorne --
+        Edgar Allan Poe -- Charles Dickens -- Robert Browning -- Charlotte Bronte&#x308;
+        -- Henry David Thoreau -- Emily Bronte&#x308; -- Walt Whitman -- Herman Melville
+        -- George Eliot -- Charles Baudelaire -- Fyodor Dostoyevsky -- Gustave Flaubert
+        -- Henrik Ibsen -- Leo Tolstoy -- Emily Dickinson -- Lewis Carroll -- Mark
+        Twain -- E&#x301;mile Zola -- Henry James -- August Strindberg -- Oscar Wilde
+        -- Arthur Rimbaud -- George Bernard Shaw -- Anton Chekhov -- Rabindranath
+        Tagore -- William Butler Yeats -- Luigi Pirandello -- Marcel Proust -- Robert
+        Frost -- Thomas Mann -- Lu Xun -- Virginia Woolf -- James Joyce -- Franz Kafka
+        -- T.S. Eliot -- Eugene O'Neill -- Anna Akhmatova -- William Faulkner --Vladimir
+        Nabokov -- Ernest Hemingway -- John Steinbeck -- George Orwell -- Pablo Neruda
+        -- Samuel Beckett -- Richard Wright -- Eudora Welty -- Naguib Mahfouz -- Albert
+        Camus -- Aleksandr Solzhenitsyn -- Jack Kerouac -- Flannery O'Connor -- Toni
+        Morrison -- Wole Soyinka -- Sir Salman Rushdie -- J.K. Rowling.</description>\n
+        \ <subject>Authors--Biography.</subject>\n  <subject>Literature--Bio-bibliography.</subject>\n
+        \ <identifier>URN:ISBN:9781615300051 (library binding)</identifier>\n  <identifier>URN:ISBN:1615300058
+        (library binding)</identifier>\n</srw_dc:dc></zs:recordData><zs:recordPosition>1</zs:recordPosition></zs:record><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>150th
+        anniversary, Emil Berliner [sound recording].</title>\n  <creator>Berliner,
+        Emile, 1851-1929.</creator>\n  <type>sound recording</type>\n  <publisher>Hanover
+        : Universal,</publisher>\n  <date>p2001.</date>\n  <language>mul</language>\n
+        \ <description>Sampler celebrating anniversary of Emil Berliner Studios, Hanover
+        Germany; Vocal and instrumental music with various performers.</description>\n
+        \ <description>In container 19 x 14 cm.</description>\n  <description>Program
+        notes ([11] p.) inserted.</description>\n  <description>Not for sale, for
+        promotion only.</description>\n  <description>disc 1. Wo ist der Mann? / Marlene
+        Dietrich ; Mon Le&#x301;gionnaire / Edith Piaf ; Man mu&#x308;sste Klavier
+        spielen ko&#x308;nnen /Johannes Heesters ; Lili Marleen / Lale Andersen ;
+        Kriminal-tango / Hazy Osterwald Sextett ; Afrikaan Beat / Bert Kaempfert ;
+        Ma&#x301;s que nada / Sergio Mendes ; Sous le ciel de Paris / Juliette Greco
+        ; Waterloo / Abba ; Night fever / Bee Gees ; Biscaya / James Last ; Every
+        breath you take / The Police ; Summer of '69 / Bryan Adams ; Everybody wants
+        to rule the world / Tears For Fears ; I still haven't found what I 'm looking
+        for / U2 ; Always there / Incognito ; Keep the faith / Bon Jovi ; All I wanna
+        do / Sherly Crow ; How bizarre / OMC ; That don't impress me much / Shania
+        Twain ; Didn't cha know / Erykah Badu ; Daylight / No Angels -- disc 2. Meyrbeer
+        : \"O paradiso\" / Enrico Caruso ; Mozart : Queen of the night's aria / Rita
+        Streich ; Puccini : \"Vissi d'arte, vissi d'amore / Renata Tebaldi ; Beethoven
+        :Symphony no. 5/1st mvmt . / L--</description>\n  <description>disc 1. Wo
+        ist der Mann / Marlene Dietrich ; Mon Le&#x301;gionnaire / Edith Piaf ; Man
+        mu&#x308;sste Klavier spielen ko&#x308;nnen /Johannes Heesters ; Lili Marleen
+        / Lale Andersen ; Kriminal-tango / Kazy Osterwald Sextett ; Afrikaan beat
+        / Bert Kaempfert ; Ma&#x301;s que nada / Sergio Mendes ; Sous le ciel de Paris
+        / Juliette Greco ; Waterloo / Abba ; Night fever / Bee Gees ; Every breath
+        you take ; The Police ; Summer of '69 / Bryan Adams ; Everybody wants to rule
+        the world / Tears for fears ; I still haven't found what I 'm looking for
+        / U2 ; Always there / Incognito / Keep the faith / Bon Jovi ; All I wanna
+        do / Sherly Crow ; How bizarre / OMC ; That don't impress me much / Shania
+        Twain ; Didn't Cha know / Erykah Badu ; Daylight / No angels -- disc 2. Meyrbeer
+        : \"O paradiso\" / Enrico Caruso ; Mozart : Queen of the night's aria / Rita
+        Streich ; Puccini : \"Vissi d'arte, vissi d'amore / Renata Tebaldi ; Beethoven
+        : Symphony no. 5/1st mvment / Herbert von Karajan ; Verdi : \"La donna e&#x300;
+        mobile / Luciano Pavarotti ; Beethoven : \"Moonlight\" sonata/1st mvmt. /
+        Alfred Brendel ; Mendelssohn: Violin concerto/2nd mvmt. / Anne-Sophie Mutter
+        ; Bellini : \"Casta Diva\" / Joan Sutherland ; Bizet : \"Quand je vous aimerai?\"
+        / Jessye Norman ; Vivaldi : \"Spring\"/1st mvmt. / I musici ; Orff : \"O fortuna\"
+        / Christian Thielemann ; Billie's blues / Billie Holiday ; Hello Dolly / Louis
+        Armstrong ; Mack the knife / Ella Fitzgerald, Duke Ellington ; Close enough
+        for love / Shirley Horn ; Me oh my / Silje Nergaard ; Everything happens to
+        me / Till Bro&#x308;nner.</description>\n  <subject>Vocal music.</subject>\n
+        \ <subject>Instrumental music.</subject>\n</srw_dc:dc></zs:recordData><zs:recordPosition>2</zs:recordPosition></zs:record><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>1996
+        Grammy nominees [sound recording].</title>\n  <type>sound recording</type>\n
+        \ <publisher>New York, NY : Grammy Recordings/Sony Music,</publisher>\n  <date>p1996.</date>\n
+        \ <language>eng</language>\n  <description>Nominees for record of the year,
+        song of the year and best new artist.</description>\n  <description>Various
+        performers.</description>\n  <description>Nominees for record of the year,
+        song of the year and best new artist.</description>\n  <description>One sweet
+        day / M. Carey ...[et al.] (Mariah Carey and Boyz II Men) -- Gangsta's paradise
+        / A. Ivey ... [et al.] (Coolio, featuring L.V.) -- One of us / E. Bazilian
+        (Joan Osborne) -- Kiss from a rose / written and performed by Seal -- Waterfalls
+        / M. Etheridge, L. Lopes, Organized Noize (TLC) -- I can love you like that
+        / S. Diamond, M. Derry, J. Kimball (All-4-One) -- You are not alone / R. Kelly
+        (Michael Jackson) -- You oughta know / A. Morissette, G. Ballard (Alanis Morissette)
+        -- Baby / K. Crouch, K. Jones, R. Patterson (Brandy) -- Let her cry / M. Bryan
+        ... [et al.] (Hootie &amp; the Blowfish) -- Any man of mine / S. Twain, R.
+        Lange (Shania Twain).</description>\n  <subject>Popular music--1991-2000.</subject>\n
+        \ <subject>Rock music--1991-2000.</subject>\n</srw_dc:dc></zs:recordData><zs:recordPosition>3</zs:recordPosition></zs:record><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>2003
+        top of the country charts : 25 hit singles.</title>\n  <type>notated music</type>\n
+        \ <publisher>Miami, Fla. : Warner Bros.,</publisher>\n  <date>c2003.</date>\n
+        \ <language>eng</language>\n  <description>For voice and piano with chord
+        symbols and guitar chord diagrams.</description>\n  <description>Additional
+        verses printed as text.</description>\n  <description>The baby (Blake Shelton)
+        -- Beautiful mess (Diamond Rio) -- Chrome (Trace Adkins) -- Concrete angel
+        (Martina McBride) -- Every river (Brooks &amp; Dunn) -- Forgive (Rebecca Lynn
+        Howard) -- I'm gonna getcha good! (Shania Twain) -- If that ain't country
+        ; John J. Blanchard (Anthony Smith) -- Life goes on (LeAnn Rimes) -- Life
+        happened (Tammy Cochran) -- A memory like I'm gonna be (Tanya Tucker) -- My
+        town (Montgomery Gentry) -- Next big thing (Vince Gill) -- Somebody like you
+        (Keith Urban) -- There's no limit (Deanna Carter) -- These days (Rascal Flatts)
+        -- Till nothing comes between us (John Michael Montgomery) -- Tiny dancer
+        (Tim McGraw) -- Unusually unusual (Lonestar) -- When the lights go down (Faith
+        Hill) -- Where would you be (Martina McBride) -- You can't hide beautiful
+        (Aaron Lines).</description>\n  <subject>Country music--2001-2010.</subject>\n
+        \ <identifier>URN:ISBN:0757911986 (pbk.)</identifier>\n</srw_dc:dc></zs:recordData><zs:recordPosition>4</zs:recordPosition></zs:record><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>2003
+        top of the pop charts : 25 hit singles.</title>\n  <type>notated music</type>\n
+        \ <publisher>Miami, Fla. : Warner Bros.,</publisher>\n  <date>c2003.</date>\n
+        \ <language>eng</language>\n  <description>For voice and piano with chord
+        symbols and guitar chord diagrams.</description>\n  <description>Across the
+        stars / John Williams -- Complicated (Avril Lavigne) -- Cry me a river (Justin
+        Timberlake) -- Die another day (Madonna) -- Don't change (Musiq) -- Everyday
+        (Bon Jovi) -- Everything you do (Marc Anthony) -- Fawkes the Phoenix / John
+        Williams -- The game of love (Santana featuring Michelle Branch) -- Gollum's
+        song / Fran Walsh &amp; Howard Shore -- Goodbye to you (Michelle Branch) --
+        I'm gonna getcha good! (Shania Twain) -- In a little while (Uncle Kracker)
+        -- James Bond theme / Monty Norman -- Just a friend (Mario) -- Life goes on
+        (LeAnn Rimes) -- Like I love you (Justin Timberlake) -- Little things (India.Arie)
+        -- Love at first sight (Kylie Minogue) -- The rising (Bruce Springsteen) --
+        Sk8er boi (Avril Lavigne) -- These days (Rascal Flatts) -- A thousand miles
+        (Vanessa Carlton) -- When I'm gone (3 Doors Down) -- When the lights go down
+        (Faith Hill) -- The world's greatest (R. Kelly).</description>\n  <subject>Popular
+        music--2001-2010.</subject>\n  <identifier>URN:ISBN:0757901255 (pbk.)</identifier>\n</srw_dc:dc></zs:recordData><zs:recordPosition>5</zs:recordPosition></zs:record><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>2004
+        country top radio spins : piano, vocal, chords.</title>\n  <type>notated music</type>\n
+        \ <publisher>Miami, Fla. : Warner Bros.,</publisher>\n  <date>c2004.</date>\n
+        \ <language>eng</language>\n  <description>For voice and piano. Includes chord
+        symbols and guitar chord diagrams.</description>\n  <description>Cowboy take
+        me away (Dixie Chicks) -- Days go by (Keith Urban) -- Drinkin' bone (Tracy
+        Byrd) -- Forever and for always (Shania Twain) -- Girls lie too (Terri Clark)
+        -- Have you forgotten? (Darryl Worley) -- Here for the party (Gretchen Wilson)
+        -- Hey good lookin' (Jimmy Buffett with Clint Black, Kenny Chesney, Alan Jackson,
+        Toby Keith and George Strait) -- I got a feelin' (Billy Currington) -- I hate
+        everything (George Strait) -- If nobody believed in you (Joe Nichols) -- It's
+        five o'clock somewhere (Alan Jackson and Jimmy Buffett) -- Live like you were
+        dying (Tim McGraw) -- Modern day Bonnie and Clyde (Travis Tritt) -- Nothing
+        on but the radio (Gary Allan) -- Redneck woman (Gretchen Wilson) -- Save a
+        horse (Ride a cowboy) (Big &amp; Rich) -- Somebody (Reba McEntire) -- Suds
+        in the bucket (Sara Evans) -- You are (Jimmy Wayne).</description>\n  <subject>Country
+        music--2001-2010.</subject>\n  <identifier>http://www.loc.gov/catdir/toc/fy0705/2006563943.html</identifier>\n
+        \ <identifier>URN:ISBN:0757937594 (pbk.)</identifier>\n</srw_dc:dc></zs:recordData><zs:recordPosition>6</zs:recordPosition></zs:record><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>21 essential
+        American short stories /</title>\n  <creator>Pockell, Leslie.</creator>\n
+        \ <type>text</type>\n  <publisher>New York : Thomas Dunne Books,</publisher>\n
+        \ <date>2011.</date>\n  <language>eng</language>\n  <description>This book
+        is a collection of beloved stories that have comprised an important part of
+        the fabric of our culture, from the earliest days of our nation to the twentieth
+        century. Some of the stories, such as Washington Irving's \"Rip Van Winkle,\"
+        O. Henry's \"The Gift of the Magi,\" William Faulkner's \"A Rose for Emily,\"
+        Charlotte Perkins Gilman's \"The Yellow Wallpaper,\" and James Thurber's \"The
+        Secret Life of Walter Mitty,\" have been long regarded as literary classics,
+        while others, such as Frank Stockton's \"The Lady or the Tiger?\" and Ellis
+        Parker Butler's \"Pigs Is Pigs,\" are lesser known but well worth discovering.
+        The carefully selected stories, each preceded by an illuminating headnote,
+        powerfully illustrate the varied richness of our national literature and history.
+        This beautifully packaged volume, containing the unforgettable classic short
+        stories that evoke our shared American tradition and national identity, makes
+        the perfect gift for the short story aficionado and novice alike. --From publisher
+        description.</description>\n  <description>This book is a collection of beloved
+        stories that have comprised an important part of the fabric of our culture,
+        from the earliest days of our nation to the twentieth century. Some of the
+        stories, such as Washington Irving's \"Rip Van Winkle,\" O. Henry's \"The
+        Gift of the Magi,\" William Faulkner's \"A Rose for Emily,\" Charlotte Perkins
+        Gilman's \"The Yellow Wallpaper,\" and James Thurber's \"The Secret Life of
+        Walter Mitty,\" have been long regarded as literary classics, while others,
+        such as Frank Stockton's \"The Lady or the Tiger?\" and Ellis Parker Butler's
+        \"Pigs Is Pigs,\" are lesser known but well worth discovering. The carefully
+        selected stories, each preceded by an illuminating headnote, powerfully illustrate
+        the varied richness of our national literature and history. This beautifully
+        packaged volume, containing the unforgettable classic short stories that evoke
+        our shared American tradition and national identity, makes the perfect gift
+        for the short story aficionado and novice alike. --From publisher description.</description>\n
+        \ <description/>\n  <subject>Short stories, American.</subject>\n  <identifier>URN:ISBN:9780312648039
+        (hardcover)</identifier>\n  <identifier>URN:ISBN:0312648030 (hardcover)</identifier>\n</srw_dc:dc></zs:recordData><zs:recordPosition>7</zs:recordPosition></zs:record><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>25 top
+        country singles, 2004 : piano, vocal, chords.</title>\n  <type>notated music</type>\n
+        \ <publisher>Miami, Fla. : Warner Bros. Publications,</publisher>\n  <date>c2004.</date>\n
+        \ <language>eng</language>\n  <description>For voice and piano, with chord
+        symbols and guitar chord diagrams.</description>\n  <description>Chicks dig
+        it (Chris Cagle) -- Drinkin' bone (Tracy Byrd) -- Every Friday afternoon (Craig
+        Morgan) -- Hell yeah (Montgomery Gentry) -- It's five o'clock somewhere (Alan
+        Jackson and Jimmy Buffett) -- John J. Blanchard (Anthony Smith) -- Loco (David
+        Lee Murphy) -- My last name (Dierks Bentley) -- Next big thing (Vince Gill)
+        -- Only God (Could stop me loving you) (Emerson Drive) -- Playboys of the
+        Southwestern world (Blake Shelton) -- Real good man (Tim McGraw) -- She's
+        not just a pretty face (Shania Twain) -- Somebody (Reba) -- Sweet Southern
+        comfort (Buddy Jewel) -- Texas plates (Kellie Coffey) -- There goes my life
+        (Kenny Chesney) -- There's no limit (Deana Carter) -- 'Til nothing comes between
+        us (John Michael Montgomery) -- Tough little boys (Gary Allan) -- Up! (Shania
+        Twain) -- Was that my life (Joe Dee Messina) -- Wrinkles (Diamond Rio) --
+        You can't hide beautiful (Aaron Lines) -- You can't take the honky tonk out
+        of the girl (Brooks &amp; Dunn).</description>\n  <subject>Country music--2001-2010.</subject>\n
+        \ <identifier>URN:ISBN:0757923151 (pbk.)</identifier>\n</srw_dc:dc></zs:recordData><zs:recordPosition>8</zs:recordPosition></zs:record><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>4 classic
+        American novels /</title>\n  <creator>Newman, Sandra, 1965-</creator>\n  <creator>Hawthorne,
+        Nathaniel, 1804-1864. Scarlet letter.</creator>\n  <creator>Twain, Mark, 1835-1910.
+        Adventures of Huckleberry Finn.</creator>\n  <creator>Crane, Stephen, 1871-1900.
+        Red badge of courage.</creator>\n  <creator>Melville, Herman, 1819-1891. Billy
+        Budd.</creator>\n  <type>text</type>\n  <publisher>New York : Signet Classics/New
+        American Library,</publisher>\n  <date>2007.</date>\n  <language>eng</language>\n
+        \ <description>The scarlet letter / Nathaniel Hawthorne -- Adventures of Huckleberry
+        Finn / Mark Twain -- The red badge of courage / Stephen Crane -- Billy Budd
+        / Herman Melville.</description>\n  <subject>American fiction--19th century.</subject>\n
+        \ <identifier>http://www.loc.gov/catdir/enhancements/fy0801/2007278212-d.html</identifier>\n
+        \ <identifier>URN:ISBN:9780451530554 (pbk.)</identifier>\n  <identifier>URN:ISBN:0451530551
+        (pbk.)</identifier>\n</srw_dc:dc></zs:recordData><zs:recordPosition>9</zs:recordPosition></zs:record><zs:record><zs:recordSchema>info:srw/schema/1/dc-v1.1</zs:recordSchema><zs:recordPacking>xml</zs:recordPacking><zs:recordData><srw_dc:dc
+        xmlns:srw_dc=\"info:srw/schema/1/dc-schema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns=\"http://purl.org/dc/elements/1.1/\" xsi:schemaLocation=\"info:srw/schema/1/dc-schema
+        http://www.loc.gov/standards/sru/resources/dc-schema.xsd\">\n  <title>4 classic
+        American novels.</title>\n  <creator>Hawthorne, Nathaniel, 1804-1864. Scarlet
+        letter. 1969.</creator>\n  <creator>Twain, Mark, 1835-1910. Adventures of
+        Huckleberry Finn. 1969.</creator>\n  <creator>Crane, Stephen, 1871-1900. Red
+        badge of courage. 1969.</creator>\n  <creator>Melville, Herman, 1819-1891.
+        Billy Budd. 1969.</creator>\n  <type>text</type>\n  <publisher>New York, New
+        American Library</publisher>\n  <date>[1969]</date>\n  <language>eng</language>\n
+        \ <description>The scarlet letter, by N. Hawthorne.--The adventures of Huckleberry
+        Finn, by M. Twain.--The red badge of courage, by S. Crane.--Billy Budd, by
+        H. Melville.</description>\n  <subject>American fiction.</subject>\n</srw_dc:dc></zs:recordData><zs:recordPosition>10</zs:recordPosition></zs:record></zs:records></zs:searchRetrieveResponse>\n"
+    http_version: 
+  recorded_at: Thu, 09 Aug 2012 00:01:47 GMT
+recorded_with: VCR 2.2.4

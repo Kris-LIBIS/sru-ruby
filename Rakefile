@@ -1,11 +1,16 @@
-RUBY_SRU_VERSION = '0.0.9'
+#!/usr/bin/env ruby
 
 require 'rubygems'
+begin
+  require 'bundler/setup'
+rescue LoadError
+  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
+end
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
-require 'rake/packagetask'
-require 'rake/gempackagetask'
+require 'yard'
+
+Bundler::GemHelper.install_tasks
 
 task :default => [:test]
 
@@ -16,32 +21,7 @@ Rake::TestTask.new('test') do |t|
   t.ruby_opts = ['-r sru', '-r test/unit']
 end
 
-Rake::RDocTask.new('doc') do |rd|
-  rd.rdoc_files.include('lib/**/*.rb', 'README')
-  rd.main = 'README'
-  rd.options << "--inline-source"
-  rd.rdoc_dir = 'doc'
+YARD::Rake::YardocTask.new('doc') do |t|
+  t.files = ['lib/**/*.rb', 'README']
 end
 
-spec = Gem::Specification.new do |s|
-  s.name = 'sru'
-  s.version = RUBY_SRU_VERSION
-  s.author = 'Ed Summers'
-  s.email = 'ehs@pobox.com'
-  s.homepage = 'http://github.com/edsu/sru-ruby'
-  s.platform = Gem::Platform::RUBY
-  s.summary = 'a Ruby library for the Search/Retrieve via URL (SRU) protocol'
-  s.description = <<-EOF
-Client for the Search/Retrieve via URL (SRU) protocol.
-http://www.loc.gov/standards/sru/
-EOF
-  s.files = Dir.glob("{lib,test}/**/*")
-  s.require_path = 'lib'
-  s.has_rdoc = true
-  s.add_dependency 'libxml-ruby'
-end
-
-Rake::GemPackageTask.new(spec) do |pkg|
-  pkg.need_zip = true
-  pkg.need_tar = true
-end
