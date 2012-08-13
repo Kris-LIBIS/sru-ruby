@@ -1,6 +1,9 @@
 sru
 ===
 
+[![Build Status](https://secure.travis-ci.org/edsu/sru-ruby.png)
+ ](http://travis-ci.org/edsu/sru-ruby)
+
 sru is a Ruby library for talking to servers that support the [Search & Retrieve
 by URL](http://www.loc.gov/standards/sru) (SRU) protocol. SRU is a lightweight 
 API for performing information retrieval over HTTP. It is lightweight compared
@@ -45,10 +48,10 @@ You should be able to install the gem:
 
 More information about the project:
 
-    http://github.com/edsu/sru-ruby
+<http://github.com/edsu/sru-ruby>
 
 License
 -------
 
-* [cc0](http://creativecommons.org/about/cc0)
-
+[![cc0](http://i.creativecommons.org/p/zero/1.0/88x31.png)
+ ](http://creativecommons.org/publicdomain/zero/1.0/)
