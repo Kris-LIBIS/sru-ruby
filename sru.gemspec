@@ -17,6 +17,7 @@ EOF
   s.add_development_dependency 'bundler', '>= 1.1.4'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'redcarpet'
+  s.add_development_dependency 'test-unit'
   s.add_development_dependency 'vcr'
   s.add_development_dependency 'webmock'
   s.add_development_dependency 'yard'

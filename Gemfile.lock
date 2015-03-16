@@ -31,6 +31,7 @@ DEPENDENCIES
   rake
   redcarpet
   sru!
+  test-unit
   vcr
   webmock
   yard
