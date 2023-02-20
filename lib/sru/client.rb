@@ -125,7 +125,7 @@ module SRU
       uri.query = parts.join('&')
       # fetch the xml and build/return a document object from it
       begin
-        res = Net::HTTP.start(uri.host, uri.port) {|http|
+        res = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') {|http|
           req = Net::HTTP::Get.new(uri.request_uri, { "Accept" => "text/xml, application/xml"})
           if uri.user && uri.password
             req.basic_auth uri.user, uri.password
