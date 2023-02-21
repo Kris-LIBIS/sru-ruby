@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # allow people to require sru and get all the goodies
 
 require 'sru/client'

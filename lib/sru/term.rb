@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SRU
 
   # a class for representing a term in the response from a sru server
