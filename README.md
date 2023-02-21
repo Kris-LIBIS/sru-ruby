@@ -1,8 +1,7 @@
 sru
 ===
 
-[![Build Status](https://secure.travis-ci.org/edsu/sru-ruby.png)
- ](http://travis-ci.org/edsu/sru-ruby)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Kris-LIBIS/sru-ruby/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Kris-LIBIS/sru-ruby/tree/main)
 
 sru is a Ruby library for talking to servers that support the [Search & Retrieve
 by URL](http://www.loc.gov/standards/sru) (SRU) protocol. SRU is a lightweight 
@@ -11,6 +10,8 @@ to its pre-HTTP ancestor [Z39.50](http://en.wikipedia.org/wiki/Z39.50). If
 you are thinking about implementing SRU on the server side you should probably 
 be looking at the much more simple and widely deployed 
 [OpenSearch](http://opensearch.org).
+
+Originally created by [Ed Summers](https://github.com/edsu).
 
 Typically SRU clients perform a 'searchRetrieve' operation on a 
 repository and get back different flavored XML metadata for the hits. In
